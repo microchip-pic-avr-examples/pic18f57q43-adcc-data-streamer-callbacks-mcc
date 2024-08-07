@@ -7,7 +7,7 @@
         "version": "1.0.0",
         "displayName": "pic18f57q43-adcc-data-streamer-callbacks-mcc",
         "projectName": "pic18f57q43-adcc-data-streamer-callbacks-mcc",
-        "shortDescription": "The ADCC Data Streamer Example, of the MCC Melody ADCC Example Component, used in the Callbacks Implementation. Displays ADCC samples visualized with the Data Streamer. An ADC conversion is taken every 100 ms on the selected analog channel.\r\n\r\n",
+        "shortDescription": "The ADCC Data Streamer Example, of the MCC Melody ADCC Example Component, used in the Callbacks Implementation. Displays ADCC samples visualized with the Data Streamer. An ADC conversion is taken every 100 ms on the selected analog channel.",
         "ide": {
             "name": "MPLAB X",
             "semverRange": ">=6.20.0"
