@@ -63,8 +63,8 @@ void TMR2_Initialize(void){
     T2HLT = 0x0;
     // TRSEL T2CKIPPS pin; 
     T2RST = 0x0;
-    // PR 242; 
-    T2PR = 0xF2;
+    // PR 193; 
+    T2PR = 0xC1;
     // TMR 0x0; 
     T2TMR = 0x0;
 
@@ -75,8 +75,8 @@ void TMR2_Initialize(void){
     PIR3bits.TMR2IF = 0;
     // Enabling TMR2 interrupt.
     PIE3bits.TMR2IE = 1;
-    // TCKPS 1:64; TMRON on; TOUTPS 1:1; 
-    T2CON = 0xE0;
+    // TCKPS 1:16; TMRON on; TOUTPS 1:1; 
+    T2CON = 0xC0;
 }
 
 void TMR2_ModeSet(TMR2_HLT_MODE mode)

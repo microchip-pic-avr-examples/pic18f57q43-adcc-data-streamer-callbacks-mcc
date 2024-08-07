@@ -1,18 +1,15 @@
 /**
- * System Driver Header File
- * 
- * @file system.h
- * 
- * @defgroup systemdriver System Driver
- * 
- * @brief This file contains the API prototype for the System Driver.
+ * DATASTREAMER Generated Driver API Source File.
  *
- * @version Driver Version 2.0.3
+ * @file data_streamer.c
  *
- * @version Package Version 5.3.5
-*/
-
-/*
+ * @ingroup datastreamer
+ *
+ * @brief This file contains the implementation for the Data Streamer driver APIs.
+ *
+ * @version Data Streamer Driver Version 1.2.1
+ */
+ /*
 © [2024] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
@@ -33,31 +30,35 @@
     THIS SOFTWARE.
 */
 
-#ifndef SYSTEM_H
-#define	SYSTEM_H
+#include "../data_streamer.h"
 
-#include <xc.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include "../system/config_bits.h"
-#include "../system/pins.h"
-#include "../adc/adcc.h"
-#include "../data_streamer/data_streamer.h"
-#include "../timer/tmr2.h"
-#include "../uart/uart1.h"
-#include "../system/interrupt.h"
-#include "../system/clock.h"
+struct DATA_STREAMER_STRUCT DataStreamer;
+struct PACKAGE_STRUCT DATA_STREAMER_PACKAGE;
 
-/**
- * @ingroup systemdriver
- * @brief Initializes the system module.
- * This routine is called only once during system initialization, before calling other APIs.
- * @param None.
- * @return None.
-*/
-void SYSTEM_Initialize(void);
+void DataStreamer_Initialize(void)
+{
+    DataStreamer_PackageSet(&DataStreamer, sizeof (DataStreamer));
+}
 
-#endif	/* SYSTEM_H */
-/**
- End of File
-*/
+void DataStreamer_FrameSend(void * package, size_t length)
+{
+    /* cppcheck-suppress misra-c2012-11.5 */
+    char * dp = package;
+    DataStreamer_VariableWrite(DATA_STREAMER_START_BYTE);
+    size_t counter = length;
+    while (counter > 0U)
+    {
+        DataStreamer_VariableWrite(*dp++);
+        counter--;
+    }
+    DataStreamer_VariableWrite(DATA_STREAMER_END_BYTE);
+    while (DataStreamer_IsTxDone() == false)
+    {
+    }
+};
+
+void DataStreamer_PackageSet(void * customStructHandler, size_t customlength)
+{
+    DATA_STREAMER_PACKAGE.varStruct = customStructHandler;
+    DATA_STREAMER_PACKAGE.length = customlength;
+};

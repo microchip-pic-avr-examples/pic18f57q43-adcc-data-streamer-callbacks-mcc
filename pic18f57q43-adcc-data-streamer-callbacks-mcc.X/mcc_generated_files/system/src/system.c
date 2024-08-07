@@ -40,6 +40,7 @@ void SYSTEM_Initialize(void)
     CLOCK_Initialize();
     PIN_MANAGER_Initialize();
     ADCC_Initialize();
+    DataStreamer_Initialize();
     TMR2_Initialize();
     UART1_Initialize();
     INTERRUPT_Initialize();

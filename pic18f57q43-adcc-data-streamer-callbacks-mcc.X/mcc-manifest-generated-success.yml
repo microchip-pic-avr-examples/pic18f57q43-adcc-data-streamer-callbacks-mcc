@@ -2,7 +2,7 @@
 
 manifest_file_version: 1.0.0
 project: pic18f57q43-adcc-data-streamer-callbacks-mcc
-creation_date: 2024-08-06T12:51:29.908+02:00[Europe/Paris]
+creation_date: 2024-08-07T17:23:42.405+02:00[Europe/Paris]
 operating_system: Windows 10
 mcc_mode: IDE
 mcc_mode_version: v6.20
@@ -10,13 +10,14 @@ device_name: PIC18F57Q43
 compiler: XC8 2.46
 mcc_version: 5.5.1
 mcc_core_version: 5.7.1
-content_manager_version: 5.0.1-c
+content_manager_version: 5.0.1-e
 is_mcc_offline: false
 is_using_prerelease_versions: false
 mcc_content_registries: https://registry.npmjs.org/
 device_library: {library_class: com.microchip.mcc.melody.Library, name: Melody, version: 2.7.1}
 packs: {name: PIC18F-Q_DFP, version: 1.25.433}
 modules:
+- {name: '@mchp-mcc/data-streamer-driver', type: MELODY, version: 2.0.2-dev.1}
 - {name: '@mchp-mcc/example-pic-adcc', type: MELODY, version: 1.0.0}
 - {name: '@mchp-mcc/main-manager', type: MELODY, version: 3.1.2}
 - {name: '@mchp-mcc/pic-8bit', type: MELODY, version: 5.28.2}

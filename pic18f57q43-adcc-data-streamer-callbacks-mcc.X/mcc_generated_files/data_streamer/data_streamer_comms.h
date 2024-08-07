@@ -1,17 +1,14 @@
 /**
- * System Driver Header File
- * 
- * @file system.h
- * 
- * @defgroup systemdriver System Driver
- * 
- * @brief This file contains the API prototype for the System Driver.
+ * DATASTREAMER Generated Driver Comms API Header File.
  *
- * @version Driver Version 2.0.3
+ * @file data_streamer_comms.h
+ * 
+ * @defgroup datastreamer_comms DATASTREAMER_COMMS
+ * 
+ * @brief This file contains the API prototypes Data Streamer driver's serial Communication operations.
  *
- * @version Package Version 5.3.5
-*/
-
+ * @version Data Streamer Driver Version 1.2.1
+ */
 /*
 © [2024] Microchip Technology Inc. and its subsidiaries.
 
@@ -33,31 +30,28 @@
     THIS SOFTWARE.
 */
 
-#ifndef SYSTEM_H
-#define	SYSTEM_H
+#ifndef DATA_STREAMER_COMMS_H
+#define	DATA_STREAMER_COMMS_H
 
-#include <xc.h>
-#include <stdint.h>
 #include <stdbool.h>
-#include "../system/config_bits.h"
-#include "../system/pins.h"
-#include "../adc/adcc.h"
-#include "../data_streamer/data_streamer.h"
-#include "../timer/tmr2.h"
-#include "../uart/uart1.h"
-#include "../system/interrupt.h"
-#include "../system/clock.h"
+/**
+ * @ingroup datastreamer_comms
+ * @brief  Writes a variable to the Data Streamer.
+ * @param char var - 8-bit variable to be sent.
+ * @return None.
+ */ 
+void DataStreamer_VariableWrite(char var);
 
 /**
- * @ingroup systemdriver
- * @brief Initializes the system module.
- * This routine is called only once during system initialization, before calling other APIs.
+ * @ingroup datastreamer_comms
+ * @brief  Returns the status of the Transmission.
  * @param None.
- * @return None.
-*/
-void SYSTEM_Initialize(void);
+ * @retval True - Data completely transmitted
+ * @retval False - Data is still in transmission
+ */ 
+bool DataStreamer_IsTxDone(void);
 
-#endif	/* SYSTEM_H */
+#endif	/* DATA_STREAMER_COMMS_H */
 /**
  End of File
 */

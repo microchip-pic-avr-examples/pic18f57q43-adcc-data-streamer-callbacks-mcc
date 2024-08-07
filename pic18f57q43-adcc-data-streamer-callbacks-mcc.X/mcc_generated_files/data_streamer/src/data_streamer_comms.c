@@ -1,18 +1,15 @@
 /**
- * System Driver Header File
- * 
- * @file system.h
- * 
- * @defgroup systemdriver System Driver
- * 
- * @brief This file contains the API prototype for the System Driver.
+ * DATASTREAMER Generated Driver Comms API Source File.
  *
- * @version Driver Version 2.0.3
+ * @file data_streamer_comms.c
  *
- * @version Package Version 5.3.5
-*/
-
-/*
+ * @ingroup datastreamer_comms
+ *
+ * @brief This file contains the implementation for the Data Streamer driver's serial Communication operations.
+ *
+ * @version Data Streamer Driver Version 1.2.1
+ */
+ /*
 © [2024] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
@@ -33,31 +30,20 @@
     THIS SOFTWARE.
 */
 
-#ifndef SYSTEM_H
-#define	SYSTEM_H
+#include "../data_streamer_comms.h"
+#include "../../uart/uart1.h"
 
-#include <xc.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include "../system/config_bits.h"
-#include "../system/pins.h"
-#include "../adc/adcc.h"
-#include "../data_streamer/data_streamer.h"
-#include "../timer/tmr2.h"
-#include "../uart/uart1.h"
-#include "../system/interrupt.h"
-#include "../system/clock.h"
+static const uart_drv_interface_t *DS_UART = &UART1;
 
-/**
- * @ingroup systemdriver
- * @brief Initializes the system module.
- * This routine is called only once during system initialization, before calling other APIs.
- * @param None.
- * @return None.
-*/
-void SYSTEM_Initialize(void);
+void DataStreamer_VariableWrite(char var)
+{       
+    while (DS_UART->IsTxReady() == false)
+    {
+    }
+    DS_UART->Write(var);
+};
 
-#endif	/* SYSTEM_H */
-/**
- End of File
-*/
+bool DataStreamer_IsTxDone(void)
+{   
+    return DS_UART->IsTxDone();
+};
