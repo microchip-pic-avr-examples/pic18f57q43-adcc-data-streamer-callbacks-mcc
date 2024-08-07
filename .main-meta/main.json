@@ -4,7 +4,7 @@
     "content": {
         "metaDataVersion": "1.3.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f57q43-adcc-data-streamer-callbacks-mcc",
-        "version": " ",
+        "version": "1.0.0",
         "displayName": "pic18f57q43-adcc-data-streamer-callbacks-mcc",
         "projectName": "pic18f57q43-adcc-data-streamer-callbacks-mcc",
         "shortDescription": "The ADCC Data Streamer Example, of the MCC Melody ADCC Example Component, used in the Callbacks Implementation. Displays ADCC samples visualized with the Data Streamer. An ADC conversion is taken every 100 ms on the selected analog channel.\r\n\r\n",
@@ -19,12 +19,12 @@
             }
         ],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "PIC18F-Q_DFP",
+            "semverRange": "^1.24.430"
         },
         "configurator": {
-            "name": "",
-            "semverRange": ""
+            "name": "MCC",
+            "semverRange": "^5.7.1"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -37,8 +37,20 @@
             }
         },
         "author": "Glen Nilsen",
-        "peripherals": [],
-        "keywords": [],
+        "peripherals": [
+            "ADC",
+            "GPIO",
+            "UART"
+        ],
+        "keywords": [
+            "Data Visualizer",
+            "MPLAB Data Visualizer",
+            "ADC",
+            "UART",
+            "Getting Started",
+            "Melody",
+            "MCC Melody"
+        ],
         "additionalData": {
             "longDescription": {
                 "metaDataVersion": "1.0.0",
