@@ -6,7 +6,7 @@
    </picture>
 </a>
 
-# MCC Melody ADC Data Streamer Printf Example - Callbacks Implementation (PIC18F57Q43)
+# MCC Melody ADC Data Streamer Example - Callbacks Implementation (PIC18F57Q43)
 
 The [ADC Data Streamer example](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.EXAMPLES.RUNNING.ADCC.DATA.STREAMER&version=latest&redirect=true "Analog-to-Digital Conversion (ADC) Data Streamer example"), of the MCC Melody ADCC Example Component, is used in the Callbacks Implementation.  Displays ADCC samples visualized with the Data Streamer. An ADC conversion is taken every 100 ms on the selected analog channel, also toggling a LED and Debug GPIO. 
 
