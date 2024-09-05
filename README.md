@@ -8,12 +8,12 @@
 
 # MCC Melody ADC Data Streamer Example - Callbacks Implementation (PIC18F57Q43)
 
-The [ADC Data Streamer example](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.EXAMPLES.RUNNING.ADCC.DATA.STREAMER&version=latest&redirect=true "Analog-to-Digital Conversion (ADC) Data Streamer example"), of the MCC Melody ADCC Example Component, is used in the Callbacks Implementation.  Displays ADCC samples visualized with the Data Streamer. An ADC conversion is taken every 100 ms on the selected analog channel, also toggling a LED and Debug GPIO. 
+The [ADC Data Streamer example](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.EXAMPLES.RUNNING.ADCC.DATA.STREAMER&version=latest&redirect=true "Analog-to-Digital Conversion (ADC) Data Streamer example"), of the MCC Melody ADCC Example Component, is used in the Callbacks implementation and displays ADCC samples visualized with the Data Streamer. An Analog-to-Digital Conversion measurement is taken every 100 ms on the selected analog channel, also toggling an LED and Debug GPIO.
 
 ## MCC Melody Example Components
 Example Components are a tight integration of learning material directly into MCC. This allows users to conveniently place configuration instructions side-by-side to the components they are configuring. For more information, refer to the [MCC Melody Example Components Introduction](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.EXAMPLES&version=latest&redirect=true). 
 
-**Note:** The image below shows the ADCC Example Component, as it would be moving to the ADCC Data Streamer (Callbacks Implementation), having implemented the ADCC Basic Printf (Callbacks Implementation). In this case a diff between the two examples is shown. 
+**Note:** The image below shows the ADCC Example Component, as it would be moving to the ADCC Data Streamer, having implemented the ADCC Basic Printf, both of which are part of the Callbacks implementation. In this case. a diff between the two examples is shown. 
 
 ![MCC Melody Example Components](images/ADCCDataStreamer_CallbacksFromBasiPrintfCallbacks-Intro.png)
 
@@ -48,7 +48,7 @@ All instructions required to recreate this example are listed below, under Confi
 
 ![TIMER Toggle LED, Callbacks Implementation](images/ADCC_DataStreamer_Callbacks-ConfigComplete.png)
 
-Once you have loaded the project in MPLAB X IDE, you will also be able to find more information from Tooltips and links next to the instructions 
+Once the project is loaded in MPLAB X IDE, the user will be able to find more information from Tooltips and links next to the instructions 
 [![Tooltip and link](images/Icon-info-circle-fill.png "Find the Tx pin from your schematic and set it in Pin Grid View.")](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.CONFIGHELP.UART.CNANO&version=latest&redirect=true).
 
 
@@ -57,44 +57,42 @@ Once you have loaded the project in MPLAB X IDE, you will also be able to find m
 
 ## Operation
 The image below shows the [ADCC Basic Printf example](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.EXAMPLES.RUNNING.ADCC.PRINTF&version=latest&redirect=true
-) running, using the MPLAB Data Visualizer. 
-
-1) Click the ![Data Visualizer icon](images/Icon-MPLAB-DataVisualizer_1cm.png) icon to open the MPLAB Data Visualizer.
-2) Under the *Variable Streamers* tab (on the left hand side), click the ![Import ds file](images/button-import-ds-file.png "Import DS file.") button, to import a *.ds* file.
-3) From your project root, navigate into *mmc_generated_files/data_streamer/* directory.
-4) Click on the *data_streamer.ds* file to select it. 
-5) Then click the ![open button](images/button-open.png) button, to load the ds file.
-
-![Loading the ds file](images/Running the ADCC Data Streamer Example)
-
-You should see a *data_streamer Properties* window, showing the *adcResult* and *adcSampleCount* variables loaded. 
-
-1) Click the ![save button](images/button-save.png) button, to load this data streamer configuration. 
-
-![ds file loaded](images/ds_file_loaded_1_12cm.png)
-
-1) Click on the ![no source button](images/button-no-source.png) button.
-2) Select your board from those available. 
-
-   **Note:** If your board is not recognised by the MPLAB Data Visualizer, got to the Device Manager (Windows), to determine the COMx number.  
-
-3) Click on the ![settings gear icon](images/Icon-DataVisualizer-SettingsGear.png) icon, to bring up the COMx Settings. 
-4) Set the baud rate to 115200, then click out of the window to close the settings. 
-5) Click the ![Time Plot icon](images/Icon-DataVisualizer_TimePlot.png) icon, to plot all variables. 
-
-![Data Streamer Config](images/DataStreamerConfig_25cm.png)
-
-1) Click on the *Connections* button.
-2) Under Debug GPIO, click the ![Add to time plot icon](images/Icon-DataVisualizer_TimePlot.png "Display as raw data on time plot.") icon, to add to the time plot.
-
-![Debug I/O Time Plot](images/DebugIO_TimePlot_8cm.png)
-
-If all is correct, when changing the pot meter value, you should see similar results to the below image.  
+) running, using the MPLAB Data Visualizer.
 
 ![Running the ADCC Basic Printf Example](images/Running_the_ADCC_Data_Streamer_Example.png)
 
+## Data Visualizer Configuration
 
-## Summary
+1) Click the ![Data Visualizer icon](images/Icon-MPLAB-DataVisualizer_1cm.png) icon to open the MPLAB Data Visualizer.
+2) Under the **Variable Streamers** tab (on the left-hand side), click the ![Import ds file](images/button-import-ds-file.png "Import DS file.") button, to import a `.ds` file.
+3) From your project root, navigate into `mcc_generated_files/data_streamer/` directory.
+4) Click the `data_streamer.ds` file to select it. 
+5) Then click the ![open button](images/button-open.png) button to load the ds file.
+
+![Loading the ds file](images/RunningDataStreamerEx-Open_ds_file_12cm.png)
+
+The data_streamer Properties window will open up, displaying the loaded adcResult and adcSampleCount variables. 
+
+1) Click the ![save button](images/button-save.png) button to load this data streamer configuration. 
+
+![ds file loaded](images/ds_file_loaded_1_12cm.png)
+
+2) Click the ![no source button](images/button-no-source.png) button.
+3) Select your board from those available. 
+
+   **Note:** If your board is not recognised by the MPLAB Data Visualizer, go to the Device Manager (Windows) to determine the COMx number.  
+
+4) Click the ![settings gear icon](images/Icon-DataVisualizer-SettingsGear.png) icon to bring up the COMx Settings. 
+5) Set the baud rate to 115200, then click out of the window to close the settings. 
+6) Click the ![Time Plot icon](images/Icon-DataVisualizer_TimePlot.png) icon to plot all variables. 
+
+![Data Streamer Config](images/DataStreamerConfig_25cm.png)
+
+1) Click the **Connections** button.
+2) Under Debug GPIO, click the ![Add to time plot icon](images/Icon-DataVisualizer_TimePlot.png "Display as raw data on time plot.") icon to add to the time plot.
+
+![Debug I/O Time Plot](images/DebugIO_TimePlot_8cm.png)
+
 For more example components, open the stand-alone Content Manager ![CM_icon](images/Icon-MPLAB-CM24.png) in MCC. 
 
 ![Standalone_CM](images/MCC_ContentManager_Examples_18cm.png) 

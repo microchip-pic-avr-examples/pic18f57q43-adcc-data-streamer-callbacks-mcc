@@ -425,6 +425,18 @@ void UART1_TransmitISR(void)
     }
 }
 
+int getch(void)
+{
+    while(!(UART1_IsRxReady()));
+    return UART1_Read();
+}
+
+void putch(char txData)
+{
+    while(!(UART1_IsTxReady()));
+    return UART1_Write(txData);   
+}
+
 
 
 

@@ -43,62 +43,62 @@
  * @ingroup tmr2
  * @brief Defines the Custom Name for the \ref TMR2_Initialize API
  */
-#define Timer2_Initialize TMR2_Initialize
+#define Timer_ds_Initialize TMR2_Initialize
 
 /**
  * @ingroup tmr2
  * @brief Defines the Custom Name for the \ref TMR2_ModeSet API
  */
-#define Timer2_ModeSet TMR2_ModeSet
+#define Timer_ds_ModeSet TMR2_ModeSet
 
 /**
  * @ingroup tmr2
  * @brief Defines the Custom Name for the \ref TMR2_ExtResetSourceSet API
  */
-#define Timer2_ExtResetSourceSet TMR2_ExtResetSourceSet
+#define Timer_ds_ExtResetSourceSet TMR2_ExtResetSourceSet
 
 /**
  * @ingroup tmr2
  * @brief Defines the Custom Name for the \ref TMR2_Start API
  */
-#define Timer2_Start TMR2_Start
+#define Timer_ds_Start TMR2_Start
 
 /**
  * @ingroup tmr2
  * @brief Defines the Custom Name for the \ref TMR2_Stop API
  */
-#define Timer2_Stop TMR2_Stop
+#define Timer_ds_Stop TMR2_Stop
 
 /**
  * @ingroup tmr2
  * @brief Defines the Custom Name for the \ref TMR2_Read API
  */
-#define Timer2_Read TMR2_Read
+#define Timer_ds_Read TMR2_Read
 
 /**
  * @ingroup tmr2
  * @brief Defines the Custom Name for the \ref TMR2_Write API
  */
-#define Timer2_Write TMR2_Write
+#define Timer_ds_Write TMR2_Write
 
 /**
  * @ingroup tmr2
  * @brief Defines the Custom Name for the \ref TMR2_PeriodCountSet API
  */
-#define Timer2_PeriodCountSet TMR2_PeriodCountSet
+#define Timer_ds_PeriodCountSet TMR2_PeriodCountSet
 
 /**
  * @ingroup tmr2
  * @brief Defines the Custom Name for the \ref TMR2_OverflowCallbackRegister API
  */
-#define Timer2_OverflowCallbackRegister TMR2_OverflowCallbackRegister
+#define Timer_ds_OverflowCallbackRegister TMR2_OverflowCallbackRegister
 
 /**
  @ingroup tmr2
  @struct TMR_INTERFACE
  @brief This is an instance of TMR_INTERFACE for TMR2 module.
  */
-extern const struct TMR_INTERFACE Timer2;
+extern const struct TMR_INTERFACE Timer_ds;
 
 /**
  * @ingroup tmr2
