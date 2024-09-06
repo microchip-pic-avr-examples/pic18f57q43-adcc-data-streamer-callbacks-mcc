@@ -38,7 +38,7 @@
 #include <xc.h>
 #include "../tmr2.h"
 
-const struct TMR_INTERFACE Timer_ds = {
+const struct TMR_INTERFACE Timer2 = {
     .Initialize = TMR2_Initialize,
     .Start = TMR2_Start,
     .Stop = TMR2_Stop,

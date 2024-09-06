@@ -38,8 +38,7 @@
 static void ADCC_ConversionDone_Callback(void);
 static void Timer_Callback_100ms(void);
 
-static const struct TMR_INTERFACE *Timer_dsFrame = &Timer_ds; // TODO: Replace TimerX with name of const struct TMR_INTERFACE, from MCC Generated Files > timer > tmrx.c 
-static const struct TMR_INTERFACE *Timer_printfADC = &Timer_printf;  
+static const struct TMR_INTERFACE *Timer = &Timer2; // TODO: Replace TimerX with name of const struct TMR_INTERFACE, from MCC Generated Files > timer > tmrx.c 
 
 static volatile bool sendFrame = false;
 static volatile bool printResult = false;
@@ -59,12 +58,6 @@ void Timer_Callback_100ms(void)
     ADCC_StartConversion(channel_ANA7); // TODO: Replace x with the ADCC Channel you selected in Pin Grid View
 }
 
-void Timer_Callback_1s(void)
-{
-    printResult = true;
-}
-
-
 int main(void)
 {
     SYSTEM_Initialize();
@@ -72,9 +65,7 @@ int main(void)
     DataStreamer.adcSampleCount = 0;
     DataStreamer.adcResult = 0;
     ADCC_SetADIInterruptHandler(ADCC_ConversionDone_Callback);
-    
-    Timer_dsFrame->TimeoutCallbackRegister(Timer_Callback_100ms);
-    Timer_printfADC->TimeoutCallbackRegister(Timer_Callback_1s);
+    Timer->TimeoutCallbackRegister(Timer_Callback_100ms);
     
     INTERRUPT_GlobalInterruptEnable();
 
@@ -84,12 +75,6 @@ int main(void)
         {
             WriteFrame();
             sendFrame = false;
-        }
-        if (printResult)
-        {
-            (void) printf("The ADC Result is: %d\r\n", DataStreamer.adcResult);
-            IO_Debug_SetHigh();
-            printResult = false;
         }
     }
 }
