@@ -10,6 +10,13 @@
 
 The [ADC Data Streamer example](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.EXAMPLES.RUNNING.ADCC.DATA.STREAMER&version=latest&redirect=true "Analog-to-Digital Conversion (ADC) Data Streamer example"), of the MCC Melody ADCC Example Component, is used in the Callbacks implementation and displays ADCC samples visualized with the Data Streamer. An Analog-to-Digital Conversion measurement is taken every 100 ms on the selected analog channel, also toggling an LED and Debug GPIO.
 
+## Video Building This Example 
+
+[![Video Building this Example](images/5_ADCBasicPrintf-ADCDataStreamer-Callbacks-VideoImage.png "In this video, we start with the ADC Basic Printf example, then move to the The ADC Data Streamer example, of the MCC Melody ADCC Example Component.")](https://youtu.be/vDt2tV0ucz8?list=PLtQdQmNK_0DTA08RmyuJH4dyNrYGDGi0l)
+
+**Video:** [Introducing MCC Melody Example Components](https://youtu.be/zK5jLiIIYvE?list=PLtQdQmNK_0DTA08RmyuJH4dyNrYGDGi0l)
+(while building the Polled version of the Timer Toggle LED example).  
+
 ## MCC Melody Example Components
 Example Components are a tight integration of learning material directly into MCC. This allows users to conveniently place configuration instructions side-by-side to the components they are configuring. For more information, refer to the [MCC Melody Example Components Introduction](https://onlinedocs.microchip.com/v2/keyword-lookup?keyword=MCC.MELODY.EXAMPLES&version=latest&redirect=true). 
 
